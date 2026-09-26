@@ -24,6 +24,7 @@ modules:
   - type: script
     snippets:
       - "rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9 libfprint-tod libfprint-tod-goodix"
+      - "mkdir -p /var/opt && mv /opt/nordvpn /var/opt/nordvpn && ln -sf /var/opt/nordvpn /opt/nordvpn"
 
   - type: dnf
     repos:
