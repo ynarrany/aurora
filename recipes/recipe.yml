@@ -17,10 +17,6 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: copr
-    repos:
-      - antiderivative/libfprint-tod-goodix-0.0.9
-
   - type: script
     snippets:
       - "rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9 libfprint-tod libfprint-tod-goodix"
@@ -30,6 +26,7 @@ modules:
     repos:
       copr:
         - atim/starship
+        - antiderivative/libfprint-tod-goodix-0.0.9
     install:
       packages:
         - micro
