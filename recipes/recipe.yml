@@ -20,17 +20,8 @@ modules:
   - type: dnf
     repos:
       copr:
-        - antiderivative/libfprint-tod-goodix-0.0.9
-
-  - type: script
-    snippets:
-      - "rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:antiderivative:libfprint-tod-goodix-0.0.9 libfprint-tod libfprint-tod-goodix"
-      - "mkdir -p /var/opt && mv /opt/nordvpn /var/opt/nordvpn && ln -sf /var/opt/nordvpn /opt/nordvpn"
-
-  - type: dnf
-    repos:
-      copr:
         - atim/starship
+        - antiderivative/libfprint-tod-goodix-0.0.9
       files:
         - nordvpn.repo
     install:
@@ -41,6 +32,11 @@ modules:
         - nordvpn-gui
         - podman-compose
         - libfprint-tod-goodix
+    remove:
+      packages:
+        - libfprint
+    optfix:
+      - nordvpn
 
   - type: systemd
     system:
