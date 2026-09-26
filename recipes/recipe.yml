@@ -18,7 +18,7 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: copr
-    enable:
+    repos:
       - antiderivative/libfprint-tod-goodix-0.0.9
 
   - type: script
